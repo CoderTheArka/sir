@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>IDEAL DASHBOARD</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='nav.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='student.css'>
+    <script src='student.js'></script>
+</head>
+<body>
+     <label>
+    <input type="checkbox" id="input">   
+    <div class="toggle">
+        <span class="top_line common"></span>
+        <span class="middle_line common"></span>
+        <span class="bottom_line common"></span>
+
+    </div>
+        <div class="slide">
+            <h1 id="h1">MENU</h1>
+            
+            <ul>
+                <li><a href="#"><i class="fas fa-tv"></i>DASHBOARD</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>YOUR PROFILE</a></li>
+                <li><a href="student.html"><i class="fas fa-user-circle"></i>ADD STUDENT</a></li>
+                <li><a href="#"><i class="fas fa-phone"></i>HOMEWORK</a></li>
+                <li><a href="studentinfo.html"><i class="fas fa-book"></i>STUDENT INFO</a></li>
+                <li><a href="#"><i class="fas fa-video"></i>LIVE CLASS</a></li>
+                <li><a href="#"><i class="fas fa-comments"></i>CHAT</a></li>
+                <li><a href="#"><i class="fas  fa-fire"></i>LEAVE</a></li>
+            </ul>
+        </div>
+     </label>
+     <style>
+        #sss{
+        margin: 0 0 20px;
+        font-weight: 400;
+        color: #1c87c9;
+        }
+        p {
+        margin: 0 0 5px;
+        }
+        .main-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #1c87c9;
+        }
+        form {
+        padding: 25px;
+        margin: 25px;
+        box-shadow: 0 2px 5px #f5f5f5; 
+        background: #f5f5f5; 
+        }
+        .fas2 {
+        margin: 25px 10px 0;
+        font-size: 72px;
+        color: #fff;
+
+        }
+        .fa-envelope {
+        transform: rotate(-20deg);
+        }
+        .fa-at , .fa-mail-bulk{
+        transform: rotate(10deg);
+        }
+        select ,input, textarea {
+        width: calc(100% - 18px);
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #1c87c9;
+        outline: none;
+        }
+        #dinput::placeholder {
+        color: #666;
+        }
+        button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #1c87c9; 
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        }
+        button:hover {
+        background: #2371a0;
+        } 
+        @media (min-width: 568px) {
+        .main-block {
+        flex-direction: row;
+        }
+        .left-part, form {
+        width: 50%;
+        }
+        .fa-envelope {
+        margin-top: 0;
+        margin-left: 20%;
+        }
+        .fa-at {
+        margin-top: -10%;
+        margin-left: 65%;
+        }
+        .fa-mail-bulk {
+        margin-top: 2%;
+        margin-left: 28%;
+        }
+        #note{
+            color: red;
+
+        }
+    }
+        </style>
+        </head>
+        <body>
+        <div class="main-block">
+        <div class="left-part">
+        <i class="fas fa-envelope  fas2"></i>
+        <i class="fas fa-at  fas2"></i>
+        <i class="fas fa-mail-bulk  fas2"></i>
+        </div>
+        <form onsubmit="return false" action="/">
+        <h1 id="sss">ADD STUDENT</h1>
+        <label id="note">YOU NEED TO REMINBER THE PASSWORD AND USERNAME AND GIVE IT TO THE CHILD SO THAT THEY CAN LOG IN. YOU CAN ALSO GO TO STUDENT INFO TO KNOW THE PASSWORD OF A STUDENT</label><br>
+        <div class="info">
+
+        <input maxlength="30" id="Username" required class="fname" type="text" name="name" placeholder="Full name">
+        <select id="class" >
+            <option>SELECT THE CLASS</option>
+            <option>VI</option>
+            <option>VII</option>
+            <option>VIII</option>
+            <option>XI</option>
+            <option>X</option>
+            <option>XI</option>
+            <option>XII</option>
+        
+        </select>
+        <button type="submit" onclick="generate()">GENAREATE PASSWORD</button><br><br>
+        <input readonly maxlength="20" id="Password" required  type="text" name="name" placeholder="Password"><br><br>
+
+        <button id="add1212" style="display: none;" type="submit" onclick="add()">SUBMIT</button><br><br>
+        </div>
+
+        
+        </form>
+        </div>
+</body>
+</html>
